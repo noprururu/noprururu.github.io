@@ -1,11 +1,199 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>初めてのページ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>のっぷるるるゲーム</title>
+<style>
+/* 画面全体に背景として固定 */
+body {
+margin: 0;
+overflow: hidden;
+background-color: #0d0e15; /* 深みのあるダーク背景 */
+font-family: sans-serif;
+}
+canvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+z-index: -1; /* コンテンツの裏側に配置 */
+pointer-events: none; /* マウスイベントを透過させる場合 */
+}
+/* コンテンツのサンプル（背景として機能しているか確認用） */
+.content {
+position: relative;
+z-index: 1;
+color: #ffffff;
+text-align: center;
+margin-top: 40vh;
+font-size: 2rem;
+text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+letter-spacing: 0.15em;
+}
+</style>
 </head>
 <body>
-    <h1>こんにちは！</h1>
-    <p>これは簡単なHTMLファイルのサンプルです。</p>
+<center>
+<font color = "#fff" size = 5>
+<pre>
+HP制作中につき、ご迷惑おかけします。
+
+
+冥鳴ひまりVSサキュバス シューティングゲーム
+
+
+<a href="https://noprururu.github.io/himarimeimeivssuccubus/">開発ログ</a>
+
+
+<a href="https://ateliernop.web.fc2.com/">OLD Site</a>
+
+
+</pre>
+<center>
+
+
+<canvas id="sphereCanvas"></canvas>
+
+<script>
+//<div class="content">Quaternion Matrix</div>
+
+
+
+
+const canvas = document.getElementById('sphereCanvas');
+const ctx = canvas.getContext('2d');
+
+// 画面サイズに合わせる
+function resize() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+// --- クォータニオン（四元数）クラス ---
+class Quaternion {
+constructor(w = 1, x = 0, y = 0, z = 0) {
+this.w = w; this.x = x; this.y = y; this.z = z;
+}
+
+// クォータニオンの積（回転の合成）
+multiply(q) {
+return new Quaternion(
+this.w * q.w - this.x * q.x - this.y * q.y - this.z * q.z,
+this.w * q.x + this.x * q.w + this.y * q.z - this.z * q.y,
+this.w * q.y - this.x * q.z + this.y * q.w + this.z * q.x,
+this.w * q.z + this.x * q.y - this.y * q.x + this.z * q.w
+);
+}
+
+// 軸と角度からクォータニオンを生成
+static fromAxisAngle(axis, angle) {
+const halfAngle = angle / 2;
+const sin = Math.sin(halfAngle);
+// 軸を正規化
+const len = Math.hypot(axis.x, axis.y, axis.z);
+const ax = axis.x / len;
+const ay = axis.y / len;
+const az = axis.z / len;
+return new Quaternion(Math.cos(halfAngle), ax * sin, ay * sin, az * sin);
+}
+
+// 点 (x, y, z) をこのクォータニオンで回転させる
+rotateVector(v) {
+// 点をクォータニオンに変換
+const p = new Quaternion(0, v.x, v.y, v.z);
+// 共役クォータニオン
+const conj = new Quaternion(this.w, -this.x, -this.y, -this.z);
+// q * p * q^-1
+const rotated = this.multiply(p).multiply(conj);
+return { x: rotated.x, y: rotated.y, z: rotated.z };
+}
+}
+
+// --- 球体の点を生成 ---
+const points = [];
+const numLatitudes = 25;  // 緯線の数
+const numLongitudes = 25; // 経線の数
+const radius = 220;   // 球体の半径
+
+for (let i = 0; i <= numLatitudes; i++) {
+const lat = (i * Math.PI) / numLatitudes - Math.PI / 2; // -π/2 から π/2
+const cosLat = Math.cos(lat);
+const sinLat = Math.sin(lat);
+
+for (let j = 0; j < numLongitudes; j++) {
+const lon = (j * 2 * Math.PI) / numLongitudes; // 0 から 2π
+const cosLon = Math.cos(lon);
+const sinLon = Math.sin(lon);
+
+// 3次元座標
+points.push({
+x: radius * cosLat * cosLon,
+y: radius * sinLat,
+z: radius * cosLat * sinLon
+});
+}
+}
+
+// --- アニメーション設定 ---
+// 現在の回転状態を表すクォータニオン
+let currentRotation = new Quaternion(1, 0, 0, 0);
+
+// 回転軸（斜めにぐるぐる回るように設定）
+const rotationAxis = { x: 1, y: 1.2, z: 0.5 }; 
+const rotationSpeed = 0.008; // 回転の速さ
+
+// 毎フレームごとの微小回転クォータニオン
+const deltaRotation = Quaternion.fromAxisAngle(rotationAxis, rotationSpeed);
+
+function animate() {
+// 前のフレームをクリア（少し不透明度を残して軌跡を作るのも綺麗です）
+ctx.fillStyle = 'rgba(13, 14, 21, 0.2)'; // 0.2にすると残像が残ります
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+const fov = 400; // 視野の深さ（遠近感の調整）
+
+// 状態の更新：現在の回転に微小回転を掛け合わせる
+currentRotation = currentRotation.multiply(deltaRotation);
+
+// 点の描画
+points.forEach(p => {
+// 1. クォータニオンで3次元回転
+const rotated = currentRotation.rotateVector(p);
+
+// 2. カメラからの距離（Z軸のオフセット）を設定。奥にあるものを小さく見せる
+const cameraZ = 500;
+const zPos = rotated.z + cameraZ;
+
+if (zPos > 0) {
+// 3. 3次元から2次元への透視投影（パースペクティブ変換）
+const scale = fov / zPos;
+const projX = centerX + rotated.x * scale;
+const projY = centerY + rotated.y * scale;
+
+// 4. 奥行き（Z）に応じた見た目の調整
+const size = Math.max(0.5, scale * 1.2); // 手前ほど大きく
+// 手前ほど明るく、奥ほど暗く（立体感を出す）
+const alpha = Math.min(1, Math.max(0.1, (rotated.z + radius) / (radius * 2)));
+
+// 描画
+ctx.beginPath();
+ctx.arc(projX, projY, size, 0, Math.PI * 2);
+// サイバー感のあるネオンブルー/パープル調のグラデーション風カラー
+ctx.fillStyle = `rgba(0, 210, 255, ${alpha * 0.8})`;
+ctx.fill();
+}
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 </html>

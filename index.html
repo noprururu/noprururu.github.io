@@ -188,6 +188,7 @@ points.push({
 x: radius * cosLat * cosLon,
 y: radius * sinLat,
 z: radius * cosLat * sinLon
+
 });
 
 }
@@ -198,12 +199,12 @@ z: radius * cosLat * sinLon
 // 現在の回転状態を表すクォータニオン
 //default↓
 //let currentRotation = new Quaternion(1, 0, 0, 0);
-let currentRotation = new Quaternion(0, 1, 0, 0);
+let currentRotation = new Quaternion(0, -1, 0, 0);
 
 
 // 回転軸（斜めにぐるぐる回るように設定）
-const rotationAxis = { x: 0, y: 1, z: 0 }; 
-const rotationSpeed = 0.001; // 回転の速さ
+const rotationAxis = { x: 0, y: -1, z: 0 }; 
+const rotationSpeed = 0.000633; // 回転の速さ
 
 // 毎フレームごとの微小回転クォータニオン
 const deltaRotation = Quaternion.fromAxisAngle(rotationAxis, rotationSpeed);
@@ -246,11 +247,19 @@ ctx.arc(projX, projY, size, 0, Math.PI * 2);
 // サイバー感のあるネオンブルー/パープル調のグラデーション風カラー
 ctx.fillStyle = `rgba(0, 210, 255, ${alpha * 0.8})`;
 ctx.fill();
-}
-});
+
+//if ( i == 1 ) ctx.fillText("x: " + projX + "y: + " + projY + "z: " + zPos, projX, projY);
+
+}// zPos
+
+});// forEach
+
+
+
 
 requestAnimationFrame(animate);
-}
+
+}// animate
 
 animate();
 </script>

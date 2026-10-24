@@ -1,0 +1,195 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title id = "title">のっぷるるるゲーム DevLog</title>
+</head>
+<style>
+body{
+background:#0d0e15;
+color:#EDEFF2;
+font-family: sans-serif;
+
+}
+
+table th, table td { /* font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;*/
+font-size: 24px;
+text-align: center; /* テーブルをcenterにする */
+vertical-align: middle; /* トップにする */
+
+}
+
+/*リンクを訪問前と後を白くする ※今は使ってないので削除可*/
+a, a:visited {
+color: #EDEFF2; /* 純粋な白 */
+text-decoration: none;
+font-size: 24px;
+
+}
+
+/*リンクを訪問前と後を白くする*/
+table a, table a:visited {
+color: #EDEFF2;
+text-decoration: none; /*リンクの下線用*/
+font-size: 24px; /* これでもいい 1rem = 16px */
+
+}
+
+</style>
+<script>
+let fontFamily = "sans-serif";
+</script>
+
+<center>
+<font color= "#EDEFF2" size = "3">
+<h1 style="color: #EDEFF2; font-size: 32px; margin-top: 40px;">Wood and Flower DevLog</h1>
+<pre>
+<font color= "#EDEFF2" size = "4">
+<p>こちらのページは現在日本語しか対応してません。ご不便おかけします。</p>
+
+
+<table style="margin: 0 auto; font-size: 24px; border-collapse: collapse;">
+<tr><td width = "800"><pre><center>
+
+<img src="../image/woodandflowerpark.png">
+
+Wood and Flower Park
+
+<font color= "#EDEFF2" size = "4">
+
+</center>
+こちらは現在制作中のDevLogになります。不定期で更新です
+
+<div style="text-align: left; color: #EDEFF2;">
+配色の変更
+
+いろいろパラメータを弄って楽しかった
+配色のお勉強をいろいろしました
+具体的にはというと、明度３５パーと７０パーで色の見え方は変わるということです
+
+それからお勉強したことを活かしました
+
+白から黒の彩度を一度灰色近くまで落として、上げる
+色相については、全体のバランスを見つつ合わせました
+キャラクターと、マス目（グリッド）以外の輪郭線を大きく調整しました
+
+このメリットは多くあり、
+作業の負担が減ることと、処理が軽くなり他に回せること、ナチュラルなグラフィックスになることです
+いずれ斧で木こりや、カマでお花摘みを考えてると、輪郭線は不要と判断しました
+
+<img src="woodandflowerparkimage/color_scheme.png" width = "760">
+
+2026/10/24
+
+
+花と木のオブジェクトの追加
+今回は花と木をできるだけタイムラプスアニメーションを書きたいので、
+かたまった時間の確保が必要かと
+
+それと今Xで作業進捗を報告しつつ、作業するという器用さ欲しいですけどなかなか難しいです
+
+現在のプラン
+月：作業予定の発表　水：進捗内容とスクリーンショット　金：週１でGIFアニメ
+ただあまりうまくいってないです。
+
+もうちょっと自分に腕があったり、ゲームエンジンをしっかり作れてたら
+アニメーションや、オブジェクトの報告を定期的にできそうですが、
+私はゲームデザインに興味があって、そこを大切にしすぎてるのでポストする内容が地味になってます
+
+本音としましては、もうちょっと何本かリリースを出してみたいので
+制作していたいという思いが強く出てるのかもしれません
+
+修正のプラン1
+月：開発者を和ます雑談　水：開発者に居心地のいい雑談　金：GIFアニメ公開
+これならできそうです。ネタを思いつくかどうかですね
+
+修正プラン2
+月：なし　水：なし　金：GIFアニメ公開
+これもいいのかな。ただこれですと、貴重な交流チャンスを逃す感じはありますね
+2026/10/23
+
+
+配色についてのお勉強。色を調べますと、ちょっと鮮やかな色みたいです
+シンプルに彩度を落とす。隣の色とのギャップで配色映えするように調整するとよさそうです
+色を明るくしたり、暗くすると色の見え方が変わる。その時は色相を変えてみます
+これは影やライティングには特に使えますね
+2026/10/22
+
+
+UI2日目　ちょっと作業ゆっくりですが、今週は負担軽めに過ごしたいのでこれでよいと考えてます
+
+<img src="woodandflowerparkimage/ui.png" width = "760">
+
+2026/10/21
+
+
+UIの制作開始　サプリを変えたためか、作業があまり進んでません
+2026/10/20
+
+
+森の配色　パレットを作る
+ワールド座標が変化されない不具合
+チューリップの描画順の不具合　これはソートの問題なのかも
+2026/10/19
+
+
+キャラを中心に回転しなかった問題を解決
+
+こんな感じで箱庭内をぐるぐる動くゲームです
+
+<img src="woodandflowerparkimage/demo3.gif" width = "760">
+
+2026/10/18
+
+
+主人公のイラスト
+
+<img src="woodandflowerparkimage/maincharacter.png">
+
+2026/10/08
+
+
+BBQ Test
+
+<img src="woodandflowerparkimage/bbqtest.gif" width = "760">
+
+2026/10/07
+
+
+制作開始
+
+<img src="woodandflowerparkimage/greencolorgame.gif" width = "760">
+
+
+<img src="woodandflowerparkimage/idea2.png" width = "760">
+
+
+<img src="woodandflowerparkimage/idea1.png" width = "760">
+
+2026/10/04
+
+
+
+
+
+
+
+
+
+
+
+
+</div></pre></td></tr></table>
+
+
+<table height = "200"><tr><td>
+<a href = "../../index.html" >Home</a>
+</td></tr></table>
+
+
+
+
+</font>
+</center>
+</pre>
+</body>
+</html>

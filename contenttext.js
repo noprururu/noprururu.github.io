@@ -3,9 +3,10 @@ const configtext = [
 {
 title:"لعبة Noprururu",
 subtitle:"مرحبًا بكم في لعبة Noprururu!",
+genen: "قلّل التدخين، اتركه",
 himari:"Himari Meimei ضد Succubus\n\nلعبة إطلاق النار",
 devlog:"سجل التطوير",
-oldsite:"توافر محدود\n\nباستثناء بعض البلدان.",
+oldsite:"توافر محدود\n\nباستثناء بعض البلدان."
 
 },
 
@@ -13,9 +14,10 @@ oldsite:"توافر محدود\n\nباستثناء بعض البلدان.",
 {
 title:"নোপ্রুরুরু গেম",
 subtitle:"নোপ্রুরুরু গেমে আপনাকে স্বাগতম!",
+genen: "কমাও, ছাড়ো",
 himari:"হিমারি মেইমেই বনাম সাকুবাস\n\nশুট 'এম আপ গেম",
 devlog:"ডেভেলপমেন্ট লগ",
-oldsite:"সীমিত উপলব্ধতা\n\nকিছু দেশ বাদ।",
+oldsite:"সীমিত উপলব্ধতা\n\nকিছু দেশ বাদ।"
 
 },
 
@@ -23,9 +25,10 @@ oldsite:"সীমিত উপলব্ধতা\n\nকিছু দেশ ব�
 {
 title:"Noprururu 游戏",
 subtitle:"欢迎来到 Noprururu 游戏！",
+genen: "减烟即戒烟",
 himari:"日向美美 VS 魅魔\n\n射击游戏",
 devlog:"开发日志",
-oldsite:"限时上线\n\n部分国家/地区除外。",
+oldsite:"限时上线\n\n部分国家/地区除外。"
 
 },
 
@@ -33,9 +36,10 @@ oldsite:"限时上线\n\n部分国家/地区除外。",
 {
 title:"Noprururu 遊戲",
 subtitle:"歡迎來到 Noprururu 遊戲！",
+genen: "減菸即戒菸",
 himari:"日向美美 VS 魅魔\n\n射擊遊戲",
 devlog:"開發日誌",
-oldsite:"限時開放\n\n部分國家/地區除外。",
+oldsite:"限時開放\n\n部分國家/地區除外。"
 
 },
 
@@ -43,9 +47,10 @@ oldsite:"限時開放\n\n部分國家/地區除外。",
 {
 title:"Noprururu Game",
 subtitle:"Welcome to Noprururu Game!",
+genen: "Cut Down, Quit",
 himari:"Himari Meimei VS Succubus\n\nShoot 'Em Up Game",
 devlog:"Development Log",
-oldsite:"Limited availability\n\nSome countries excluded.",
+oldsite:"Limited availability\n\nSome countries excluded."
 
 },
 
@@ -53,9 +58,10 @@ oldsite:"Limited availability\n\nSome countries excluded.",
 {
 title:"Jeu Noprururu",
 subtitle:"Bienvenue dans le jeu Noprururu !",
+genen: "Réduire, c'est arrêter",
 himari:"Himari Meimei VS Succubus\n\nJeu de tir",
 devlog:"Journal de développement",
-oldsite:"Disponibilité limitée\n\nCertains pays sont exclus.",
+oldsite:"Disponibilité limitée\n\nCertains pays sont exclus."
 
 },
 
@@ -63,9 +69,10 @@ oldsite:"Disponibilité limitée\n\nCertains pays sont exclus.",
 {
 title:"नोप्रुरुरु गेम",
 subtitle:"नोप्रुरुरु गेम में आपका स्वागत है!",
+genen: "कम करो, छोड़ो।",
 himari:"हिमारी मेइमेई बनाम स्यूकबस\n\nशूट 'एम अप गेम",
 devlog:"विकास लॉग",
-oldsite:"सीमित उपलब्धता\n\nकुछ देश बहिष्कृत हैं।",
+oldsite:"सीमित उपलब्धता\n\nकुछ देश बहिष्कृत हैं।"
 
 },
 
@@ -73,9 +80,10 @@ oldsite:"सीमित उपलब्धता\n\nकुछ देश बह�
 {
 title:"Game Noprururu",
 subtitle:"Selamat datang di Game Noprururu!",
+genen: "Réduire, c'est arrêter",
 himari:"Himari Meimei VS Succubus\n\nGame Tembak menembak",
 devlog:"Catatan Pengembangan",
-oldsite:"Ketersediaan terbatas\n\nBeberapa negara tidak termasuk.",
+oldsite:"Ketersediaan terbatas\n\nBeberapa negara tidak termasuk."
 
 },
 
@@ -83,9 +91,10 @@ oldsite:"Ketersediaan terbatas\n\nBeberapa negara tidak termasuk.",
 {
 title:"のっぷるるるゲーム",
 subtitle:"のっぷるるるゲームにようこそ！",
+genen: "ゆる～く 減煙は禁煙",
 himari:"冥鳴ひまり VS サキュバス\n\nシューティングゲーム",
 devlog:"開発ログ",
-oldsite:"※見れない国もございます。\n\nご不便おかけします。",
+oldsite:"※見れない国もございます。\n\nご不便おかけします。"
 
 },
 
@@ -93,9 +102,10 @@ oldsite:"※見れない国もございます。\n\nご不便おかけします�
 {
 title:"노프루루루 게임",
 subtitle:"노프루루루 게임에 오신 것을 환영합니다!",
+genen: "줄이면 금연",
 himari:"히마리 메이메이 VS 서큐버스\n\n슈팅 게임",
 devlog:"개발 일지",
-oldsite:"일부 지역에서만 이용 가능\n\n일부 국가는 제외됩니다.",
+oldsite:"일부 지역에서만 이용 가능\n\n일부 국가는 제외됩니다."
 
 },
 
@@ -103,9 +113,10 @@ oldsite:"일부 지역에서만 이용 가능\n\n일부 국가는 제외됩니�
 {
 title:"Jogo Noprururu",
 subtitle:"Bem vindo ao Jogo Noprururu!",
+genen: "Reduza, Pare",
 himari:"Himari Meimei VS Succubus\n\nJogo de tiro",
 devlog:"Registo de desenvolvimento",
-oldsite:"Disponibilidade limitada\n\nExcluindo alguns países.",
+oldsite:"Disponibilidade limitada\n\nExcluindo alguns países."
 
 },
 
@@ -113,9 +124,10 @@ oldsite:"Disponibilidade limitada\n\nExcluindo alguns países.",
 {
 title:"Игра Noprururu",
 subtitle:"Добро пожаловать в игру Noprururu!",
+genen: "Сократи и брось",
 himari:"Химари Мэймэй против суккуба\n\nСтрелялка",
 devlog:"Журнал разработки",
-oldsite:"Ограниченная доступность\n\nЗа исключением некоторых стран.",
+oldsite:"Ограниченная доступность\n\nЗа исключением некоторых стран."
 
 },
 
@@ -123,9 +135,10 @@ oldsite:"Ограниченная доступность\n\nЗа исключе�
 {
 title:"Juego Noprururu",
 subtitle:"¡Bienvenido al juego Noprururu!",
+genen: "Reduce y deja",
 himari:"Himari Meimei contra Succubus\n\nJuego de disparos",
 devlog:"Registro de desarrollo",
-oldsite:"Disponibilidad limitada\n\nQuedan excluidos algunos países.",
+oldsite:"Disponibilidad limitada\n\nQuedan excluidos algunos países."
 
 },
 
@@ -133,9 +146,10 @@ oldsite:"Disponibilidad limitada\n\nQuedan excluidos algunos países.",
 {
 title:"نوپورورورو گیم",
 subtitle:"نوپورورورو گیم میں خوش آمدید!",
+genen: "کم کرو، چھوڑ دو",
 himari:"ہیماری می میئی بمقابلہ سکیوبس\n\nشوٹ 'ایم اپ گیم",
 devlog:"ترقیاتی لاگ",
-oldsite:"محدود دستیابی\n\nکچھ ممالک مستثنیٰ ہیں۔",
+oldsite:"محدود دستیابی\n\nکچھ ممالک مستثنیٰ ہیں۔"
 
 },
 

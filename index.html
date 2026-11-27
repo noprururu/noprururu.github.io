@@ -119,12 +119,17 @@ selectEl.value = String(langn);
 //言語別タイトルの変更
 document.getElementById('title').textContent = configtext[langn].title;
 </script>
-<center>
 <pre>
 <div style="position:relative; display:flex; justify-content:center; align-items:center; height:60px;">
 <h1 id="subtitle" style="color: #EDEFF2; font-size: 24px; margin-top: 30px;">のっぷるるゲームにようこそ！</h1>
 
-<select id="langSelect" onchange="changelang(Number(this.value))" style="position:absolute; right:20px; height:40px; padding:0 15px; font-size:15px; font-weight:normal; cursor:pointer;">
+<!-- 右上のエリア（著作権テキスト ＋ 選択メニュー） -->
+<div style="position:absolute; right:20px; display:flex; align-items:center; gap:15px;">
+<!-- 著作権テキスト -->
+<span style="color:#EDEFF2; font-size:13px; opacity:0.8;">(c) 2026 Noprururu Game</span>
+
+<!-- 選択メニュー -->
+<select id="langSelect" onchange="changelang(Number(this.value))" style="height:40px; padding:0 15px; font-size:15px; font-weight:normal; cursor:pointer;">
 <option value="0">Arabic</option>
 <option value="1">Bengali</option>
 <option value="2">Chinese(Simplified)</option>
@@ -141,7 +146,11 @@ document.getElementById('title').textContent = configtext[langn].title;
 <option value="13">Urdu</option>
 </select>
 
-</div><font color = "#EDEFF2" size = 2>
+</div></div>
+<center>
+
+<font color = "#EDEFF2" size = 2>
+
 <table border = 0><tr>
 <td width = 200><a href="app/yurukugenenhakinnen/" ><img src="app/yurukugenenhakinnen/image/yurukugenenicon.png"></a>
 
@@ -172,8 +181,9 @@ Web API</td>
 <a href="https://www.youtube.com/@Noprururu">Youtube</a>
 
 </td></tr></table>
+</center>
 </pre>
-<center>
+
 <canvas id="sphereCanvas" ></canvas>
 <script>
 /*
